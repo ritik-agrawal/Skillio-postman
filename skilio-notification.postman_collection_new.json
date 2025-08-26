@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "5faf6c7d-adb8-4472-8007-c4e67b56dec3",
+		"name": "skilio-notification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25633623"
+	},
+	"item": [
+		{
+			"name": "notification",
+			"item": [
+				{
+					"name": "send notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"medium\": \"SMS\",\r\n  \"Phone\": \"+18777804236\",\r\n  \"bodyText\": {\r\n    \"otp\": \"123456\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/notification/send",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"notification",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
