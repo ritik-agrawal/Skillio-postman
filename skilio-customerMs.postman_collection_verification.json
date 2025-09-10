@@ -1,0 +1,1335 @@
+{
+	"info": {
+		"_postman_id": "71c0b298-5a1f-4249-abf4-3529fbbf719a",
+		"name": "skilio-customerMs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25633623"
+	},
+	"item": [
+		{
+			"name": "verification",
+			"item": [
+				{
+					"name": "create verification request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\": \"+18777804236\",\r\n    \"purpose\": \"LOGIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/verificationRequest",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"verificationRequest"
+							]
+						},
+						"description": "## Verification Request API\n\nThis endpoint is used to initiate a verification process for a user by sending a verification request based on their phone number. It is typically utilized for purposes such as logging in or confirming user identity.\n\n### Request\n\n- **Method**: POST\n    \n- **Endpoint**: `{{serverUrl}}/verificationRequest`\n    \n\n#### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **phoneNumber** (string): The phone number of the user that requires verification. This should be in E.164 format, including the country code.\n    \n- **purpose** (string): The purpose of the verification request. Common values could include \"LOGIN\", \"SIGNUP\", etc.\n    \n\n**Example Request Body:**\n\n``` json\n{\n  \"phoneNumber\": \"+18777804236\",\n  \"purpose\": \"LOGIN\"\n}\n\n ```\n\n### Response\n\nThe response from the server will be in JSON format. Here’s the structure of the response body:\n\n- **success** (boolean): Indicates whether the request was successful.\n    \n- **message** (string): A message providing additional information about the request status. This may be empty.\n    \n- **errorSource** (array): An array containing details about any errors that occurred during the request. Each error object may include:\n    \n    - **path** (string): The path of the parameter that caused the error.\n        \n    - **message** (string): A message describing the error.\n        \n\n**Example Response:**\n\n``` json\n{\n  \"success\": true,\n  \"message\": \"\",\n  \"errorSource\": [\n    {\n      \"path\": \"\",\n      \"message\": \"\"\n    }\n  ]\n}\n\n ```\n\n### Status Codes\n\n- **400 Bad Request**: This status indicates that the request was not properly formatted or contained invalid parameters.\n    \n\nEnsure that the request body adheres to the specified format to avoid errors and receive a successful response."
+					},
+					"response": [
+						{
+							"name": "Sucess: verification req created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\": \"+18777804236\",\r\n    \"purpose\": \"LOGIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b6-Z8m5NvVZiaMgrnWk/Rbqv+Yzx6A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 12:48:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Verification request created successfully\",\n    \"data\": {\n        \"verification\": {\n            \"id\": \"0beaff99-6f6a-475c-a7dc-e96eb793f386\",\n            \"purpose\": \"LOGIN\",\n            \"notificationSent\": true\n        }\n    }\n}"
+						},
+						{
+							"name": "Error: already exists(sent or in progress)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\": \"+18777804236\",\r\n    \"purpose\": \"LOGIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-D4TYbNCTF6xz9jOpxvrmE68cHZo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 12:25:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"A verification for this phone number and purpose already exists and in progress or sent state\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"A verification for this phone number and purpose already exists and in progress or sent state\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: bad request(no body)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"78-JTgmhGvoYv1jKt8lyiAxHTepSr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 12:24:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"body\",\n            \"message\": \"Request body is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: bad request ( no purpose)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\":\"+18777804236\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"76-S+Se5T2A0AQZGaS8yh3mbhAamRI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Sep 2025 08:51:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"purpose\",\n            \"message\": \"Purpose is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: bad request( no phone number)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"purpose\": \"LOGIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-6Z6nDC6Ng5YcXRyI+4ArKjX52mo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 12:54:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"phoneNumber\",\n            \"message\": \"Phone number is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: invalid purpose",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\": \"+18777804236\",\r\n    \"purpose\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-I+V5LjLq+1qJMq3o3fQyG3PfN7M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 12:57:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"purpose\",\n            \"message\": \"Invalid enum value. Expected 'LOGIN' | 'PHONE_VERIFICATION' | 'EMAIL_VERIFICATION' | 'SIGNUP', received ''\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "resend otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"+9384739232\",\r\n    \"verificationId\":\"0beaff99-6f6a-475c-a7dc-e96eb793f386\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"verificationRequest",
+								"resendOtp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: resend otp sucessfull(for sent and in progress only)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\":\"+9384739232\",\r\n    \"verificationId\":\"0beaff99-6f6a-475c-a7dc-e96eb793f386\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"resendOtp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "155"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9b-G17IU+tQgPEgL2L8GoJbU8XLaRc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 12:59:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"OTP resent successfully\",\n    \"data\": {\n        \"verification\": {\n            \"id\": \"0beaff99-6f6a-475c-a7dc-e96eb793f386\",\n            \"purpose\": \"LOGIN\"\n        },\n        \"success\": true\n    }\n}"
+						},
+						{
+							"name": "Error: No existing verification(i.e already expired or verified)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\":\"+9384739232\",\r\n    \"verificationId\":\"0beaff99-6f6a-475c-a7dc-e96eb793f386\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"resendOtp"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "159"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9f-0828ZII9HsJGkXo/lHxAhJB9VdY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:09:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"No existing verification found to resend OTP\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"No existing verification found to resend OTP\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: request body is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"resendOtp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"78-JTgmhGvoYv1jKt8lyiAxHTepSr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:00:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"body\",\n            \"message\": \"Request body is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: verificationId is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\":\"+9384739232\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"resendOtp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"85-D/bppGCXDPbIWV4ATJZ8oGUwUoU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:01:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"verificationId\",\n            \"message\": \"Verification ID is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: phone number is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"verificationId\":\"0beaff99-6f6a-475c-a7dc-e96eb793f386\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"resendOtp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-6Z6nDC6Ng5YcXRyI+4ArKjX52mo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:02:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"phoneNumber\",\n            \"message\": \"Phone number is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: inavlid verificationId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\":\"+9384739232\",\r\n    \"verificationId\":\"0beaff99-6f6a-46\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/resendOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"resendOtp"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b7-0SX6ygqxCeG4Alz/+NFI2OXdALY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:10:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"invalid input syntax for type uuid: \\\"0beaff99-6f6a-46\\\"\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"invalid input syntax for type uuid: \\\"0beaff99-6f6a-46\\\"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "verify otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otpCode\": \"000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"verificationRequest",
+								"verifyOtp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: otp verified",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otpCode\":\"000000\",\r\n    \"verificationId\":\"a4ce61b1-ff95-445b-b176-00cb5372c906\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"verifyOtp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-Sybnb70W0g57765ckUGXvuMcfOc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:11:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"OTP verified successfully\",\n    \"data\": {\n        \"verificationId\": \"a4ce61b1-ff95-445b-b176-00cb5372c906\"\n    }\n}"
+						},
+						{
+							"name": "Error: otp already verified",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otpCode\": \"000000\",\r\n    \"verificationId\": \"a4ce61b1-ff95-445b-b176-00cb5372c906\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"verifyOtp"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7c-xH0LJ4F0lyC8oLvadO+q8u3r7Dc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:19:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"OTP has already been verified\",\n    \"data\": {\n        \"verificationId\": \"a4ce61b1-ff95-445b-b176-00cb5372c906\"\n    }\n}"
+						},
+						{
+							"name": "Error: request body is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"verifyOtp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"78-JTgmhGvoYv1jKt8lyiAxHTepSr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:20:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"body\",\n            \"message\": \"Request body is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: verificationId is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otpCode\": \"000000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"verifyOtp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"85-D/bppGCXDPbIWV4ATJZ8oGUwUoU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:22:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"verificationId\",\n            \"message\": \"Verification ID is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: otp code is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"verificationId\": \"adda9578-35ef-424f-b756-7321dba698ef\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"verifyOtp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-p4YRBw3E50Q2svgHFHyDLP77/BM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:23:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"otpCode\",\n            \"message\": \"OTP code is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: invalid uuid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otpCode\": \"000000\",\r\n    \"verificationId\": \"adda9578-35ef-424f-b756\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/verificationRequest/verifyOtp",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"verificationRequest",
+										"verifyOtp"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-l9Ct0kbYVGAlG+0cu5N5WAXJ1xg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Sep 2025 13:24:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"invalid input syntax for type uuid: \\\"adda9578-35ef-424f-b756\\\"\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"invalid input syntax for type uuid: \\\"adda9578-35ef-424f-b756\\\"\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
