@@ -2963,13 +2963,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{serverUrl}}/document/b6890f46-703b-47b8-b7be-f09563db1548",
+							"raw": "{{serverUrl}}/document/b6890f46-703b-47b8-b7be-f09563db1549",
 							"host": [
 								"{{serverUrl}}"
 							],
 							"path": [
 								"document",
-								"b6890f46-703b-47b8-b7be-f09563db1548"
+								"b6890f46-703b-47b8-b7be-f09563db1549"
 							]
 						},
 						"description": "### Retrieve Document by ID\n\nThis endpoint allows users to retrieve a document using its unique identifier.\n\n#### Request\n\n- **Method**: GET\n    \n- **URL**: `{{serverUrl}}/document/{documentId}`\n    \n- **Path Parameter**:\n    \n    - `documentId`: The unique identifier of the document to be retrieved. In this example, the document ID is `b6890f46-703b-47b8-b7be-f09563db1548`.\n        \n\n#### Response\n\nThe expected response will be in JSON format, containing the following structure:\n\n- **Success**: A boolean indicating whether the request was successful.\n    \n- **Message**: A string that may contain additional information or context about the request.\n    \n- **Data**: An object that may contain the retrieved document details, including:\n    \n    - `id`: The unique identifier of the document.\n        \n    - `url`: The URL where the document can be accessed.\n        \n    - `type`: The type of document.\n        \n\n#### Example Responses\n\n- { \"success\": true, \"message\": \"\", \"data\": { \"document\": { \"id\": \"document_id\", \"url\": \"document_url\", \"type\": \"document_type\" } } }\n    \n- { \"success\": true, \"message\": \"\", \"errorSource\": \\[ { \"path\": \"\", \"message\": \"\" } \\] }\n    \n\n#### Notes\n\n- A status code of `404` indicates that the requested document was not found. Ensure that the `documentId` provided is correct.\n    \n- The `success` field will always return `true` even in the case of an error, so users should check the `errorSource` for details."
@@ -3109,7 +3109,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doee\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe7\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543127\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe7@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"SKILLED\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"30c39642-fc39-4a91-9d0e-23819f96f392\",\r\n    \"imageDocumentId\": \"04f1d5d4-e0c6-4911-9c3d-9bb2b4215177\"\r\n  }\r\n}\r\n",
+							"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doee\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe13\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543113\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe13@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"3e61a5fa-6d91-431c-b078-b70b9cea234c\",\r\n    \"imageDocumentId\": \"fffdf949-11d7-47d0-8ae5-2c311f532fbe\",\r\n    \"eventsDoneDocumentId\":\"551f8eb8-bcc9-435b-96d6-67cab62f8703\"\r\n  }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4439,213 +4439,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": false,\n    \"message\": \"Profile photo doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Profile photo doesnot exist\"\n        }\n    ]\n}"
-						},
-						{
-							"name": "Error: video with this Id doesnot exist",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"leanon\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe5\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543123\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe5@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"30c39642-fc39-4a91-9d0e-23819f96f391\",\r\n    \"imageDocumentId\": \"04f1d5d4-e0c6-4911-9c3d-9bb2b4215177\"\r\n  }\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{serverUrl}}/v1/profile",
-									"host": [
-										"{{serverUrl}}"
-									],
-									"path": [
-										"v1",
-										"profile"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "109"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d-FP+yqVQHsxew9HVYiWsc+FGd/y8\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 10 Oct 2025 09:10:08 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": false,\n    \"message\": \"video doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"video doesnot exist\"\n        }\n    ]\n}"
-						},
-						{
-							"name": "Error: image with this Id doesnot exist",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"leanon\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe5\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543123\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe5@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"30c39642-fc39-4a91-9d0e-23819f96f392\",\r\n    \"imageDocumentId\": \"04f1d5d4-e0c6-4911-9c3d-9bb2b4215176\"\r\n  }\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{serverUrl}}/v1/profile",
-									"host": [
-										"{{serverUrl}}"
-									],
-									"path": [
-										"v1",
-										"profile"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "109"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d-4rVE2fqsrahOEjjX8HeaB2ko1QE\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 10 Oct 2025 09:10:36 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": false,\n    \"message\": \"image doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"image doesnot exist\"\n        }\n    ]\n}"
-						},
-						{
-							"name": "Error: Event with this Id doesnot exist",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"\",\r\n  \"lastName\": \"\",\r\n  \"groupName\": \"nirvana\",\r\n  \"nickName\": \"doe6\",\r\n  \"profileType\": \"GROUP\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543126\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe6@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"30c39642-fc39-4a91-9d0e-23819f96f392\",\r\n    \"imageDocumentId\": \"04f1d5d4-e0c6-4911-9c3d-9bb2b4215177\",\r\n    \"eventsDoneDocumentId\":\"04f1d5d4-e0c6-4911-9c3d-9bb2b4215167\"\r\n  }\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{serverUrl}}/v1/profile",
-									"host": [
-										"{{serverUrl}}"
-									],
-									"path": [
-										"v1",
-										"profile"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "109"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d-EEO7ALEyj0qyEVstnQdjtEWxruk\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 10 Oct 2025 09:12:14 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": false,\n    \"message\": \"event doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"event doesnot exist\"\n        }\n    ]\n}"
 						},
 						{
 							"name": "Error: Contact value is required",
@@ -6233,6 +6026,213 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"eventsDoneDocumentId\",\n            \"message\": \"Events done document ID is required for Professional proficiency\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: video with this id doesnot exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doee\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe12\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543112\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe12@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"3e61a5fa-6d91-431c-b078-b70b9cea234d\",\r\n    \"imageDocumentId\": \"fffdf949-11d7-47d0-8ae5-2c311f532fbe\",\r\n    \"eventsDoneDocumentId\":\"551f8eb8-bcc9-435b-96d6-67cab62f8703\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-YetZLQ0JWlVSL6sZ3O3nNoaJvk4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Oct 2025 05:38:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"VIDEO doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"VIDEO doesnot exist\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: image with this id doesnot exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doee\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe12\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543112\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe12@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"3e61a5fa-6d91-431c-b078-b70b9cea234c\",\r\n    \"imageDocumentId\": \"fffdf949-11d7-47d0-8ae5-2c311f532fbf\",\r\n    \"eventsDoneDocumentId\":\"551f8eb8-bcc9-435b-96d6-67cab62f8703\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-A788dj7jWQNRFgiqMqOyUXYoS6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Oct 2025 05:39:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"IMAGE doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"IMAGE doesnot exist\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: event with this id doesnot exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doee\",\r\n  \"groupName\": \"\",\r\n  \"nickName\": \"doe12\",\r\n  \"profileType\": \"INDIVIDUAL\",\r\n  \"pin\": \"1234\",\r\n  \"profileDocumentId\": \"b6890f46-703b-47b8-b7be-f09563db1549\",\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"PHONE\",\r\n      \"value\": \"+919876543112\",\r\n      \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    } , {\r\n        \"type\": \"EMAIL\",\r\n        \"value\": \"doe12@gmail.com\",\r\n        \"verificationId\": \"137793d3-14eb-4c18-9fbc-8f3cf78b7b25\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"streetAddress\": \"Baneshwor Road\",\r\n    \"city\": \"Kathmandu\",\r\n    \"state\": \"Bagmati\",\r\n    \"pinCode\": 323433,\r\n    \"country\": \"India\",\r\n    \"location\": {\r\n      \"latitude\": 27.7172,\r\n      \"longitude\": 85.3240\r\n    }\r\n  },\r\n  \"portfolio\": {\r\n    \"category\": \"Music\",\r\n    \"subCategory\": \"Guitarist\",\r\n    \"proficiency\": \"PROFESSIONAL\",\r\n    \"bio\": \"I have been performing for over 5 years in local events and studios.\",\r\n    \"totalEvents\": 25,\r\n    \"videoDocumentId\": \"3e61a5fa-6d91-431c-b078-b70b9cea234c\",\r\n    \"imageDocumentId\": \"fffdf949-11d7-47d0-8ae5-2c311f532fbe\",\r\n    \"eventsDoneDocumentId\":\"551f8eb8-bcc9-435b-96d6-67cab62f8700\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-OIVjXeQ5BnEzPEdF90VxH9vRu58\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Oct 2025 05:40:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"EVENT doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"EVENT doesnot exist\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -6243,7 +6243,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"credential\":\"+919876543127\",\r\n    \"pin\":\"1236\"\r\n}   ",
+							"raw": "{\r\n    \"credential\":\"+919876543127\",\r\n    \"pin\":\"1234\"\r\n}   ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6823,6 +6823,358 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"body\",\n            \"message\": \"Pin must be 4 digits long\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get a profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/v1/profile/2fe16619-b0fc-45c6-aa80-11aa328dff09",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"v1",
+								"profile",
+								"2fe16619-b0fc-45c6-aa80-11aa328dff09"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: profile(individual) fetched sucessfully( without subscription)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile/2fe16619-b0fc-45c6-aa80-11aa328dff09",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile",
+										"2fe16619-b0fc-45c6-aa80-11aa328dff09"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"117-gQk/KSH0tNi1xdCpJZKukDzj4PU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Oct 2025 09:37:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Profile fetched successfully\",\n    \"data\": {\n        \"name\": \"john doee\",\n        \"nickName\": \"doe12\",\n        \"portfolioId\": \"df22be33-f58b-4473-9517-a4159808bbae\",\n        \"bio\": \"I have been performing for over 5 years in local events and studios.\",\n        \"isSubscribed\": false,\n        \"profilePictureId\": null\n    }\n}"
+						},
+						{
+							"name": "Sucess: profile(individual) fetched sucessfully(with subscription)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile/66d013ce-feb8-48a0-8fdf-2f64e7725bf2",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile",
+										"66d013ce-feb8-48a0-8fdf-2f64e7725bf2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "434"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b2-HEXFNhmw4ouKEUuZFWGJhbcQLrI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Oct 2025 09:40:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Profile fetched successfully\",\n    \"data\": {\n        \"name\": \"john doee\",\n        \"nickName\": \"doe13\",\n        \"portfolioId\": \"8e44e0e0-572c-4f17-8556-9d97e859c9cb\",\n        \"bio\": \"I have been performing for over 5 years in local events and studios.\",\n        \"isSubscribed\": true,\n        \"profilePictureId\": {\n            \"id\": \"b6890f46-703b-47b8-b7be-f09563db1549\"\n        },\n        \"propritaryDetails\": {\n            \"firstName\": \"john\",\n            \"lastName\": \"doee\",\n            \"phoneNumber\": \"+919876543113\",\n            \"email\": \"doe13@gmail.com\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Sucess: profile(group) fetched sucessfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile/ad099607-428e-4d98-9184-b97495bf9064",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile",
+										"ad099607-428e-4d98-9184-b97495bf9064"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"123-sxAjAJv4TfByxtp1ufeAQuusEH8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Oct 2025 09:41:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Profile fetched successfully\",\n    \"data\": {\n        \"profile\": {\n            \"groupName\": \"hello\",\n            \"nickName\": \"doe6\",\n            \"portfolioId\": \"fa1d1b79-0c05-49cd-aede-752f3fc350ce\",\n            \"bio\": \"I have been performing for over 5 years in local events and studios.\",\n            \"isSubscribed\": false\n        },\n        \"profilePictureId\": null\n    }\n}"
+						},
+						{
+							"name": "Error: profile doesnot exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile/2fe16619-b0fc-45c6-aa80-11aa328dff08",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile",
+										"2fe16619-b0fc-45c6-aa80-11aa328dff08"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"71-QQEsHfYBP2S0XfzFSzQQsW61y5M\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Oct 2025 06:53:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Profile doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Profile doesnot exist\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/profile",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: profiles fetched successfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/profile?limit=10&page=1",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"profile"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "748"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ec-qA0vgX9MHhsfEPYx4jkQHNuzVC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Oct 2025 09:34:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Profiles fetched successfully\",\n    \"data\": [\n        {\n            \"name\": \"john leanon\",\n            \"nickName\": \"doe3\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john leanon\",\n            \"nickName\": \"doe4\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john leanon\",\n            \"nickName\": \"doe5\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"groupName\": \"hello\",\n            \"nickName\": \"doe6\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john doee\",\n            \"nickName\": \"doe7\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john doee\",\n            \"nickName\": \"doe8\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john doee\",\n            \"nickName\": \"doe9\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john doee\",\n            \"nickName\": \"doe10\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john doee\",\n            \"nickName\": \"doe12\",\n            \"profilePcitureId\": null\n        },\n        {\n            \"name\": \"john doee\",\n            \"nickName\": \"doe13\",\n            \"profilePcitureId\": {\n                \"id\": \"b6890f46-703b-47b8-b7be-f09563db1549\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				}
