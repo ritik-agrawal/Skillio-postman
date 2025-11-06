@@ -7181,6 +7181,1688 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "chat",
+			"item": [
+				{
+					"name": "create/send message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9maWxlSWQiOiI0MmExNDE1Yi0xYWIwLTRmZjgtODI2Zi1kNWQ2YzE2M2RjMzQiLCJuaWNrTmFtZSI6ImRvZTgiLCJtb2JpbGVOdW1iZXIiOiIrOTE5ODc2NTQzMTI4IiwiaWF0IjoxNzYxODA1NjcxLCJleHAiOjE3NjE4MDc0NzF9.Jz96JXq7Qji2GsOw-MU1rpjSFlu2CGSXFmUaIj2HGxo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipientId",
+									"value": "4a666546-0c40-4e68-bab1-9eda07b5b81a",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "{\"text\": \"hello\"\n  }",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Roshan Chaudhary/Downloads/groot.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverUrl}}/v1/chat",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"v1",
+								"chat"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: send message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "recipientId",
+											"value": "4a666546-0c40-4e68-bab1-9eda07b5b81a",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{\"text\": \"hey jarvis ,wake up 6\"\n  }",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Roshan Chaudhary/Downloads/groot.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "453"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c5-tLw8mMxGNC2mFjUo5H6o5S0xAD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:25:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Message sent successfully\",\n    \"data\": {\n        \"id\": \"856d2bbf-f20b-4f33-a268-a0f47897cd0c\",\n        \"senderId\": \"42a1415b-1ab0-4ff8-826f-d5d6c163dc34\",\n        \"recipientId\": \"4a666546-0c40-4e68-bab1-9eda07b5b81a\",\n        \"content\": {\n            \"text\": \"hey jarvis ,wake up 6\",\n            \"fileUrl\": \"http://res.cloudinary.com/dyq7iqdyc/image/upload/v1762406701/skilioDocument/fmkjd21rdtpmf9kuxzw5.jpg\"\n        },\n        \"status\": \"SENT\",\n        \"readAt\": null,\n        \"isDeleted\": false,\n        \"createdAt\": \"2025-11-06T05:25:03.129Z\"\n    }\n}"
+						},
+						{
+							"name": "Error: recipient profile doesnot exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "recipientId",
+											"value": "4a666546-0c40-4e68-bab1-9eda07b5b817",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{\"text\": \"hey jarvis ,wake up 6\"\n  }",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Roshan Chaudhary/Downloads/groot.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"85-eN0vkyZq+1bld+HFzfawYIhj5C8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:27:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Recipient Profile doesnot exist\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Recipient Profile doesnot exist\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: either content or file must be provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "recipientId",
+											"value": "4a666546-0c40-4e68-bab1-9eda07b5b81a",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{\"text\": \"hey jarvis ,wake up 6\"\n  }",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Roshan Chaudhary/Downloads/groot.jpg",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"98-uv/g+2SQtyN/aI3lVSZgfC57R4M\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:28:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"body\",\n            \"message\": \"Either content (text or postId) or file must be provided\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: recipient Id is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "recipientId",
+											"value": "4a666546-0c40-4e68-bab1-9eda07b5b81a",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "{\"text\": \"hey jarvis ,wake up 6\"\n  }",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Roshan Chaudhary/Downloads/groot.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-8PKccDMQRBKLeyekAxomFlsJTPs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:28:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"recipientId\",\n            \"message\": \"Recipient ID is required\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9maWxlSWQiOiI0YTY2NjU0Ni0wYzQwLTRlNjgtYmFiMS05ZWRhMDdiNWI4MWEiLCJuaWNrTmFtZSI6ImRvZTkiLCJtb2JpbGVOdW1iZXIiOiIrOTE5ODc2NTQzMTI5IiwiaWF0IjoxNzYxNzM0NzAxLCJleHAiOjE3NjE3MzY1MDF9.vUevINg-UwN4GUpWFJDi-dh2OmZ4UT9m0LA1QnMx5m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"recipientId\": \"42a1415b-1ab0-4ff8-826f-d5d6c163dc34\",\r\n  \"before\": \"2025-10-29 15:25:00.000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/v1/chat?limit=30",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"v1",
+								"chat"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: messages fetched sucessfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message?conversationId=2f3b2aed-0772-47e0-a049-d90450e1e6a3&limit=30&before=2025-11-5 16:39:00.000",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									],
+									"query": [
+										{
+											"key": "conversationId",
+											"value": "2f3b2aed-0772-47e0-a049-d90450e1e6a3"
+										},
+										{
+											"key": "limit",
+											"value": "30"
+										},
+										{
+											"key": "before",
+											"value": "2025-11-5 16:39:00.000"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "368"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"170-bGjGO7OV5DzKmi1ChOwLus46IZA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:29:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Messages fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"1a33ab6b-4a87-4ac1-9f11-3637eb13e4df\",\n            \"senderId\": \"42a1415b-1ab0-4ff8-826f-d5d6c163dc34\",\n            \"recipientId\": \"4a666546-0c40-4e68-bab1-9eda07b5b81a\",\n            \"content\": {\n                \"text\": \"hey jarvis ,wake up 5\"\n            },\n            \"status\": \"READ\",\n            \"readAt\": \"2025-11-05T10:48:31.324Z\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2025-11-05T10:47:54.868Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Sucess: no messages found before the provided before date/time",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message?conversationId=2f3b2aed-0772-47e0-a049-d90450e1e6a3&limit=30&before=2025-11-2 16:39:00.000",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									],
+									"query": [
+										{
+											"key": "conversationId",
+											"value": "2f3b2aed-0772-47e0-a049-d90450e1e6a3"
+										},
+										{
+											"key": "limit",
+											"value": "30"
+										},
+										{
+											"key": "before",
+											"value": "2025-11-2 16:39:00.000"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-y0XyJ4frGReTGPJKFC5e1AQmS8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:57:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Messages fetched successfully\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "Error: conversation Id is required",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message?limit=30&before=2025-11-5 16:39:00.000",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									],
+									"query": [
+										{
+											"key": "conversationId",
+											"value": "2f3b2aed-0772-47e0-a049-d90450e1e6a3",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "30"
+										},
+										{
+											"key": "before",
+											"value": "2025-11-5 16:39:00.000"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"85-JIvpjG+xIRb01l/FThB1S8D5STg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:32:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Zod Validation Error.\",\n    \"errorSourse\": [\n        {\n            \"path\": \"conversationId\",\n            \"message\": \"Conversation ID is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: conversation not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message?conversationId=2f3b2aed-0772-47e0-a049-d90450e1e6a2&limit=30&before=2025-11-5 16:39:00.000",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message"
+									],
+									"query": [
+										{
+											"key": "conversationId",
+											"value": "2f3b2aed-0772-47e0-a049-d90450e1e6a2"
+										},
+										{
+											"key": "limit",
+											"value": "30"
+										},
+										{
+											"key": "before",
+											"value": "2025-11-5 16:39:00.000"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-rRSFgUSRR31RapJ6nXnAg+PC+1Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:33:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Conversation not found\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Conversation not found\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "soft delete message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9maWxlSWQiOiI0MmExNDE1Yi0xYWIwLTRmZjgtODI2Zi1kNWQ2YzE2M2RjMzQiLCJuaWNrTmFtZSI6ImRvZTgiLCJtb2JpbGVOdW1iZXIiOiIrOTE5ODc2NTQzMTI4IiwiaWF0IjoxNzYxODA3NzgyLCJleHAiOjE3NjE4MDk1ODJ9.mJD1IrIz2_vhtxLGTklIZhofAzPxYAnFdDUCTwTVELc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/v1/chat/47dc70ec-1556-4681-a7da-72e1ddf604d2",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"v1",
+								"chat",
+								"47dc70ec-1556-4681-a7da-72e1ddf604d2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: message soft deleted successfully",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/856d2bbf-f20b-4f33-a268-a0f47897cd0c",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"856d2bbf-f20b-4f33-a268-a0f47897cd0c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-Y9kLSb1nwF2sBXzy7wPn9f2m3Rk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:47:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Message deleted successfully\"\n}"
+						},
+						{
+							"name": "Error: message not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/856d2bbf-f20b-4f33-a268-a0f47897cd0d",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"856d2bbf-f20b-4f33-a268-a0f47897cd0d"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-SOFCD9v+sboeLUjJKnz63VvezfE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:47:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Message not found\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Message not found\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: unauthorized access",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/856d2bbf-f20b-4f33-a268-a0f47897cd0c",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"856d2bbf-f20b-4f33-a268-a0f47897cd0c"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-3w0Qi95qsivx9bNG1VATT9pBkDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:48:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"unauthorized access\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"unauthorized access\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: message already deleted",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/856d2bbf-f20b-4f33-a268-a0f47897cd0c",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"856d2bbf-f20b-4f33-a268-a0f47897cd0c"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"75-tPvwC02EYi0T6uIiBED/FSC1n60\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:48:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Message already deleted\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Message already deleted\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: invalid message uuid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/alice",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"alice"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-6WRo9oBxPIse8yIzlCH9L6WZEEg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 06:03:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"invalid input syntax for type uuid: \\\"alice\\\"\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"invalid input syntax for type uuid: \\\"alice\\\"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get conversations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9maWxlSWQiOiI0MmExNDE1Yi0xYWIwLTRmZjgtODI2Zi1kNWQ2YzE2M2RjMzQiLCJuaWNrTmFtZSI6ImRvZTgiLCJtb2JpbGVOdW1iZXIiOiIrOTE5ODc2NTQzMTI4IiwiaWF0IjoxNzYxODA1NjcxLCJleHAiOjE3NjE4MDc0NzF9.Jz96JXq7Qji2GsOw-MU1rpjSFlu2CGSXFmUaIj2HGxo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipientId",
+									"value": "4a666546-0c40-4e68-bab1-9eda07b5b81a",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "{\"text\": \"hello\"\n  }",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Roshan Chaudhary/Downloads/groot.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverUrl}}/v1/message/conversations",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"v1",
+								"message",
+								"conversations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: conversations fetched successfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversations?page=1&limit=10",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversations"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "296"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"128-RRTxunKjyrP0Ay60mFmdEs11WdM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:50:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Conversations fetched successfully\",\n    \"data\": [\n        {\n            \"participantId\": \"4a666546-0c40-4e68-bab1-9eda07b5b81a\",\n            \"conversationId\": \"2f3b2aed-0772-47e0-a049-d90450e1e6a3\",\n            \"latestMessage\": {\n                \"senderId\": \"42a1415b-1ab0-4ff8-826f-d5d6c163dc34\",\n                \"content\": {\n                    \"text\": \"hey jarvis ,wake up 5\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "sucess: no conversation found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversations?page=1&limit=10",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversations"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-u4PWKbahF6lL42fndd7+zVLW0rU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:58:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Conversations fetched successfully\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "Error: invalid jwt",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversations?page=1&limit=10",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversations"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-ev2b9JLK+hkGR8mLA1fJILSmca0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 06:02:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"invalid signature\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"invalid signature\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: no authorization header provided",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversations?page=1&limit=10",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversations"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "135"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"87-8InzAFKPUK8TtVLoHTKVH0cQHS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 06:02:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"No authorization header provided\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"No authorization header provided\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "soft delete conversation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9maWxlSWQiOiI0MmExNDE1Yi0xYWIwLTRmZjgtODI2Zi1kNWQ2YzE2M2RjMzQiLCJuaWNrTmFtZSI6ImRvZTgiLCJtb2JpbGVOdW1iZXIiOiIrOTE5ODc2NTQzMTI4IiwiaWF0IjoxNzYyNDA2NjA2LCJleHAiOjE3NjI0MTAyMDZ9.1p7GrLPDnpmHQAc7qS79xbRLxapuHm_FPVJBQKxOM6I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/v1/message/conversation/2f3b2aed-0772-47e0-a049-d90450e1e6a3",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"v1",
+								"message",
+								"conversation",
+								"2f3b2aed-0772-47e0-a049-d90450e1e6a3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: conversation soft deleted successfully",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversation/2f3b2aed-0772-47e0-a049-d90450e1e6a3",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversation",
+										"2f3b2aed-0772-47e0-a049-d90450e1e6a3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-h5IZ41JRjQt9uL4a7/5nxlpIC6Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 05:54:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Conversation deleted successfully\"\n}"
+						},
+						{
+							"name": "Error: convesation not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversation/2f3b2aed-0772-47e0-a049-d90450e1e6ae",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversation",
+										"2f3b2aed-0772-47e0-a049-d90450e1e6ae"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-rRSFgUSRR31RapJ6nXnAg+PC+1Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 06:00:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Conversation not found\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"Conversation not found\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error: invalid conversation uuid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{serverUrl}}/v1/message/conversation/alice",
+									"host": [
+										"{{serverUrl}}"
+									],
+									"path": [
+										"v1",
+										"message",
+										"conversation",
+										"alice"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-6WRo9oBxPIse8yIzlCH9L6WZEEg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Nov 2025 06:01:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"invalid input syntax for type uuid: \\\"alice\\\"\",\n    \"errorSourse\": [\n        {\n            \"path\": \"\",\n            \"message\": \"invalid input syntax for type uuid: \\\"alice\\\"\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
 		}
 	]
 }
